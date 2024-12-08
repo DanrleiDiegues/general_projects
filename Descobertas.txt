@@ -1,0 +1,71 @@
+Que o clima molda o comportamento humano não é novidade. Mas como é o comportamento de busca das pessoas de acordo com as condições climáticas? Quanto é isso quantitativamente?
+
+Para isso: coletei dados das condições climáticas de São Paulo dos últimos 2 anos e buscas no google por palavras como: Nescafé, Dolce Gusto, Zero Açúcar, Alimentação Saudável.
+
+Os dados climático coletados foi utilizado da API: Open Wethermap (dados diários)
+
+Os dados de palavras foi utilizado: o Google Trends (dados semanais)
+
+
+Dados de eventos naturais alinhado com dados provindo de meios digitais pode nos dizer muito sobre o comportamento humano. Uma vez que essas duas fontes de informação estão nos impactando nosso inconsciente a todo momento.
+
+
+Descobertas:
+
+1) Correlação:
+
+Alta Temperatura / Alta Sensação Térmica Indica:
+-- Alta Procura: 
+	- Gelados : Sorvete, Gelado, Picolé, Frutas
+
+-- Média Alta: 
+ 	- Zero Açúcar : Pessoal tenta diminuir mais o açúcar em dias de alta temperatura
+	- Supermercado: sugerindo uma pequena tendência para busca por supermercados em dias 
+	- Comida integral
+
+-- Palavras para qualquer temperatura:
+	- Sobremesa, Mousse, Barra de Cereal
+	- Negresco
+	- Passatempo
+	- Calipso
+	Vemos que certas palavras e certas marcas são para qualquer temperatura.
+
+-- Média Baixa:
+	- Nesfit, Galak
+
+-- Baixa procura: 
+	- Nescafé, Dolce Gusto, Café, Café Solúvel, Cafeteira - Words Café
+	- Bolo, Chocolate, Doce, Pizza - Words Não Saudáveis
+	- Nescau
+	- Molico
+
+
+	- Chá - Sugerindo que chá ainda é muito relacionado com o frio, mesmo com as opções geladas
+
+	- Receita : Indicando menos procura por termos 'receitas' em dias de sensação térmica maior
+
+	- Cozinhar : Ao lado de receita, indica que a correlação entre temperatura e busca pelo termo cozinhar é negativa. Sugerindo que pessoas buscam por algo "cozinhar" menos em momentos de frio.
+
+
+
+Palavras / Palavras:
+- Bolo e Chá estão altamente correlacionadas
+
+
+
+
+
+
+2) Palavras que são tendências (Análises)
+
+
+
+
+
+
+
+
+- Será que adicionar certa palavra em um post / publicação dada certas condições climáticas, é uma boa escolha?
+
+
+Coloque uma palavra e teste.

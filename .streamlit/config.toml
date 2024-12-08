@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#654321"  # Cor marrom
+backgroundColor = "#f5f5dc"  # Cor bege claro
+secondaryBackgroundColor = "#add8e6"  # Cor azul claro
+textColor = "#654321"  # Cor marrom
+font = "sans serif"

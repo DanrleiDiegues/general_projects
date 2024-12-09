@@ -25,6 +25,9 @@ def load_graphics():
         "artefatos/descricao_semanal.pkl",
         "artefatos/heatmap.pkl",
         "artefatos/pairplot.pkl",
+        "artefatos/line_plot_nestle_marcas.pkl",
+        "artefatos/line_plot_nestle.pkl",
+        "artefatos/line_plot_saudavel.pkl",
     ]
 
     for path in file_paths:
@@ -63,15 +66,16 @@ st.write("""
 # Seleção de gráficos
 chart_type = st.sidebar.selectbox(
     'Escolha o gráfico',
-    ['Home Page & Heatmap de Correlações', 
-     'Pair Plot Clima e Buscas',
-     'Dados Meteorológicos de São Paulo', 
-     'Análises Clima São Paulo', ]
+    ['Home',
+     'Heatmap de Correlações',
+     'Pair Plot Clima e Buscas', 
+     'Mais Análises do Clima São Paulo', ]
 )
 
-# Heatmap de Correlação
-if chart_type == 'Home Page & Heatmap de Correlações':
-    
+#Home Page
+# Dados Meteorológicos ao longo do tempo
+# Dados de Puscas ao longo do tempo
+if chart_type == 'Home':
     # Adicionando notas
     st.markdown("""
     **Proposta:**
@@ -83,8 +87,8 @@ if chart_type == 'Home Page & Heatmap de Correlações':
     _**Nescafé, Dolce Gusto, Zero Açúcar, e Alimentação Saudável.**_
     
     **Fonte de Dados:**    
-    - Os dados climático coletados foi utilizado da API: Open Wethermap (dados diários)
-    - Os dados de palavras foi utilizado: o Google Trends (dados semanais)
+    - Os dados climático coletados foi utilizado da **API: Open Wethermap** (dados diários)
+    - Os dados de palavras foi utilizado: o **Google Trends** (dados semanais)
 
     Sabemos que o clima e sasonalidade molda o comportamento humano. Mas como é o comportamento de busca das pessoas de acordo com as condições climáticas? Quanto é isso quantitativamente?
     Dados de eventos naturais alinhado com dados provindo de meios digitais pode nos dizer muito sobre o comportamento humano. Uma vez que essas duas fontes de informação estão nos impactando nosso inconsciente a todo momento.
@@ -98,14 +102,30 @@ if chart_type == 'Home Page & Heatmap de Correlações':
     
     Em uma análise mais completa, podemos criar modelos que prevêm tendências de busca com base nos dados naturais, como sensação térmica e horário do pôr do sol, como as coletadas aqui.
 
-    """)
+    """)    
     
+    st.subheader("Dados de Pesquisa de Palavras em São Paulo nos últimos 2 anos..")
+    
+    st.plotly_chart(graphics["line_plot_nestle_marcas.pkl"])  # Mostrar gráfico estático Matplotlib
+    
+    st.plotly_chart(graphics["line_plot_nestle.pkl"])  # Mostrar gráfico estático Matplotlib
+        
+    st.plotly_chart(graphics["line_plot_saudavel.pkl"])  # Mostrar gráfico estático Matplotlib   
+    
+    st.subheader("Dados Meteorológicos de SP ao longo de 2 anos")
+    
+    st.plotly_chart(graphics["meteorologico_tempo.pkl"])  # Mostrar gráfico estático Matplotlib
+    
+    st.text_area("Comentários sobre este gráfico:", "Adicione aqui suas observações sobre o gráfico de dados meteorológicos.")
+
+  
+
+
+# Heatmap de Correlação
+elif chart_type == 'Heatmap de Correlações':
     st.subheader('Heatmap de Correlação')
     
-    if "heatmap.pkl" in graphics:
-        st.pyplot(graphics["heatmap.pkl"])
-    else:
-        st.error("Gráfico Heatmap não disponível.")
+    st.pyplot(graphics["heatmap.pkl"])
         
     # Adicionando notas
     st.markdown("""
@@ -155,16 +175,12 @@ if chart_type == 'Home Page & Heatmap de Correlações':
     
     st.text_area("Comentários sobre este gráfico:", "Adicione aqui suas observações..")
 
-    
 
 # Pair Plot de Correlação
 elif chart_type == 'Pair Plot Clima e Buscas':
     st.subheader('Pair Plot de Correlações')
     
-    if "pairplot.pkl" in graphics:
-        st.pyplot(graphics["pairplot.pkl"])
-    else:
-        st.error("Gráfico Heatmap não disponível.")
+    st.pyplot(graphics["pairplot.pkl"])
 
     # Adicionando notas
     st.markdown("""
@@ -177,16 +193,8 @@ elif chart_type == 'Pair Plot Clima e Buscas':
     
     
 
-# Dados Meteorológicos ao longo do tempo
-elif chart_type == 'Dados Meteorológicos de São Paulo':
-    
-    st.subheader("Dados Meteorológicos de SP ao longo de 2 anos")
-    st.plotly_chart(graphics["meteorologico_tempo.pkl"])  # Mostrar gráfico estático Matplotlib
-    st.text_area("Comentários sobre este gráfico:", "Adicione aqui suas observações sobre o gráfico de dados meteorológicos.")
-
-
 # Relação entre Sunrise e Temperatura
-elif chart_type == 'Análises Clima São Paulo':
+elif chart_type == 'Mais Análises do Clima São Paulo':
     st.subheader('Desrição do tempo por semana nas últimas 105 semanas em São Paulo')
     st.plotly_chart(graphics["descricao_semanal.pkl"])  # Mostrar gráfico interativo Plotly
     st.text_area("Comentários sobre este gráfico 2:", "Adicione aqui suas observações..")

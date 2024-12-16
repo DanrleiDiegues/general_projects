@@ -195,7 +195,7 @@ elif chart_type == 'Pair Plot Clima e Buscas':
 
 # Relação entre Sunrise e Temperatura
 elif chart_type == 'Mais Análises do Clima São Paulo':
-    st.subheader('Desrição do tempo por semana nas últimas 105 semanas em São Paulo')
+    st.subheader('Descrição do tempo por semana nas últimas 105 semanas em São Paulo')
     st.plotly_chart(graphics["descricao_semanal.pkl"])  # Mostrar gráfico interativo Plotly
     st.text_area("Comentários sobre este gráfico 2:", "Adicione aqui suas observações..")
     
